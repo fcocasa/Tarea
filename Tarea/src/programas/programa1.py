@@ -3,7 +3,7 @@ import re
 import sys
 
 def programa(texto):
-    # Implementar programa
+    re.sub("\*\*\*(...)*\*\*\*", '', texto)
     return texto
 
 if __name__ == '__main__':
