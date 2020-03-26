@@ -3,7 +3,9 @@ import re
 import sys
 
 def programa(texto):
-    re.sub("\*\*\*(...)*\*\*\*", '', texto)
+    # texto=re.sub("\*\*\*(...)*\*\*\*", '', texto) tas re gil fran, esto no andaba
+    #texto=re.sub("\*\*\*(.)*\*\*\*\n", '', texto) esto es para sólo una linea
+    texto=re.sub("\*\*\*(.|\\n)*\*\*\*", '', texto) #esto anda para varias lineas
     return texto
 
 if __name__ == '__main__':
