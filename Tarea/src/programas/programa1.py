@@ -5,7 +5,8 @@ import sys
 def programa(texto):
     # texto=re.sub("\*\*\*(...)*\*\*\*", '', texto) tas re gil fran, esto no andaba
     #texto=re.sub("\*\*\*(.)*\*\*\*\n", '', texto) esto es para sólo una linea
-    texto=re.sub("\*\*\*(.|\\n)*\*\*\*", '', texto) #esto anda para varias lineas
+    texto=re.sub("( )*\*\*\*(.|\\n)*\*\*\*(\\n)*", '', texto) #esto anda para varias lineas
+    texto=re.sub("( )*//(.)*\\n", '', texto) 
     return texto
 
 if __name__ == '__main__':
