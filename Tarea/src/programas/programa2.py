@@ -2,10 +2,8 @@
 import re
 import sys
 
-#import programa1
-#no funciona
-
 def programa(texto):
+    # Implementar programa
     #paso el texto por el programa 1 para borrarle los comentarios
     texto = re.sub("( )*\*\*\*(.|\\n)*\*\*\*(\\n)*", '', texto)
     texto = re.sub("( )*//(.)*\\n", '', texto)
@@ -13,7 +11,6 @@ def programa(texto):
     i = len(re.findall(' si ', texto, flags=0))
 
     k = len(re.findall(' para cada ', texto, flags=0))
-
 
     j = len(re.findall(' para ', texto, flags=0))
     j = j-k #para descontar los "para cada"
