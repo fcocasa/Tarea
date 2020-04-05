@@ -5,8 +5,8 @@ import sys
 def programa(texto):
     # Implementar programa
     #paso el texto por el programa 1 para borrarle los comentarios
-    texto = re.sub("( )*\*\*\*(.|\\n)*\*\*\*(\\n)*", '', texto)
-    texto = re.sub("( )*//(.)*\\n", '', texto)
+    texto=re.sub(r"( )*\*\*\*(.|\n)*\*\*\*\n",'', texto) #esto anda para varias lineas,  no pudimos usar \s puesto que incluye a \n
+    texto=re.sub(r'( )*//(.)*\n', '', texto) 
 
     i = len(re.findall(' si ', texto, flags=0))
 

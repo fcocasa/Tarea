@@ -3,8 +3,8 @@ import re
 import sys
 
 def programa(texto):
-    texto=re.sub("( )*\*\*\*(.|\\n)*\*\*\*(\\n)*", '', texto) #esto anda para varias lineas
-    texto=re.sub("( )*//(.)*\\n", '', texto) 
+    texto=re.sub(r"( )*\*\*\*(.|\n)*\*\*\*\n",'', texto) #esto anda para varias lineas,  no pudimos usar \s puesto que incluye a \n
+    texto=re.sub(r'( )*//(.)*\n', '', texto) 
     return texto
 
 if __name__ == '__main__':
