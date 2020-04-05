@@ -10,26 +10,16 @@ def programa(texto):
     texto = re.sub("( )*\*\*\*(.|\\n)*\*\*\*(\\n)*", '', texto)
     texto = re.sub("( )*//(.)*\\n", '', texto)
 
-    i=0
-    sis = re.findall('( )*si ', texto, flags=0)
-    for x in sis:
-        i = i+1
+    i = len(re.findall(' si ', texto, flags=0))
 
-    k=0
-    pcs = re.findall('( )*para cada ', texto, flags=0)
-    for x in pcs:
-        k = k+1
+    k = len(re.findall(' para cada ', texto, flags=0))
 
-    j=0 #reconoce tambien los "para cada"
-    paras = re.findall('( )*para ', texto, flags=0)
-    for x in paras:
-        j = j+1
+
+    j = len(re.findall(' para ', texto, flags=0))
     j = j-k #para descontar los "para cada"
 
-    l=0
-    mientrass = re.findall('( )*mientras ', texto, flags=0)
-    for x in mientrass:
-        l = l+1
+    l = len(re.findall(' mientras ', texto, flags=0))
+
     texto = "si: " + str(i) + "\npara: " + str(j) + "\npara-cada: " + str(k) + "\nmientras: " + str(l)
     return texto 
 
