@@ -3,7 +3,16 @@ import re
 import sys
 
 def programa(texto):
-    # Implementar programa
+    texto=re.sub('( )*\*\*\*(.|\\n)*\*\*\*(\\n)*', '', texto)
+    texto=re.sub('( )*//(.)*\\n', '', texto)
+    #borrado comentarios
+
+    match = re.search(r'\w\s[\w_]\([\w\s_:<>,]\)',texto)
+    if match:
+        print("_______")
+        print match.group()
+        print("_______")
+
     return texto
 
 if __name__ == '__main__':
