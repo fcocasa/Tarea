@@ -20,7 +20,7 @@ if __name__ == '__main__':
 	
 	# ITERAR SOBRE TODOS LOS PROGRAMAS Y ENTRADAS
 	errores = 0;
-	for archPrograma in sorted(glob.glob('programas'+os.sep+'programa*.py')):
+	for archPrograma in sorted(glob.glob('programas'+os.sep+'programa5.py')):
 
 		for archEntrada in sorted(glob.glob('entradas'+os.sep+'entrada*.txt')):
 
